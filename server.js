@@ -44,6 +44,14 @@ app.post("/login", (req, res) => {
 	}
 });
 
+app.post("/users", (req, res) => {
+	mockUserData.push(req.body);
+	res.json({
+		success: true,
+		message: "new user added",
+	});
+});
+
 app.listen(8000, () => {
 	console.log("server is running on port 8000");
 });
